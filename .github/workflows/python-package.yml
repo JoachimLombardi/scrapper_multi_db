@@ -46,6 +46,7 @@ jobs:
 
     - name: Run tests  # Cela exécute les tests en utilisant pytest. Le chemin spécifié (./tests/conftest.py) indique probablement que vous avez des tests dans le dossier tests.
       run: |
+        pip install pytest 
         pytest ./tests/conftest.py
 
     - name: Run linter (exemple avec flake8)  # Cela installe et exécute le linter flake8 pour vérifier le respect des conventions de codage.
