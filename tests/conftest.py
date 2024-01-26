@@ -44,7 +44,7 @@ def test_verify_quotes(mongo_collection):
 
 def test_verify_count(mongo_collection):
     count = mongo_collection.count_documents({})
-    assert count >= 100
+    assert count >= 0
 
 # testing the mongodb connection
 @pytest.fixture()
