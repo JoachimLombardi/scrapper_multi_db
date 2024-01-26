@@ -4,6 +4,7 @@ from flask_.app import app
 
 # pytest conftest.py 
 
+
 @pytest.fixture()  # fixture utilisée pour faire les tests
 def app2():
     app.config.update({
