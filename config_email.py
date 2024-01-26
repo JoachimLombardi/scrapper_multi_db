@@ -1,5 +1,6 @@
 from redmail import EmailSender
 from pathlib import Path
+import os
 
 
 def send_email_config():
@@ -14,7 +15,6 @@ def send_email_config():
         host="smtp.gmail.com",
         port=587,
         username="lombardi.joachim@gmail.com",
-        password="brig hcvw ofhe oqxy",
+        password=os.getenv("email_password"),
     )
-
     return log_file_path, email
