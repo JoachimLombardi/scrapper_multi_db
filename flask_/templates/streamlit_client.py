@@ -4,6 +4,8 @@ import streamlit as st
 import requests, json
 import  os, sys
 
+# streamlit run streamlit_client.py
+
 # Obtenir le dossier parent du dossier actuel
 dossier_parent = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
 dossier_parent = os.path.abspath(os.path.join(dossier_parent, os.pardir))

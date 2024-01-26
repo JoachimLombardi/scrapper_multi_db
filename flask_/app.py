@@ -4,6 +4,8 @@ import json
 import logging
 from waitress import serve
 
+# flask --app app.py run
+
 app = Flask(__name__)
 
 logging.basicConfig(filename='app.log', level=logging.INFO)
@@ -27,7 +29,7 @@ def search():
         new_liste = []
         for result in liste:
             new_liste.append({"quote": result["quote"], "author": result["author"]})
-        return json.dumps(new_liste), 302
+        return json.dumps(new_liste), 200
     except Exception as e:
         return json.dumps({"error": str(e)})
 
