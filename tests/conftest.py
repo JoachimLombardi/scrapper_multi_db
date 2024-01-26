@@ -2,7 +2,7 @@ import pytest
 from pymongo import MongoClient
 from flask_.app import app
 
-# pytest conftest.py 
+# pytest conftest.py
 
 
 @pytest.fixture()  # fixture utilisée pour faire les tests
@@ -71,4 +71,3 @@ def test_mongo_db(mongo_connection):
         mongo_connection.scrapy_db
     except Exception:
         pytest.fail("Could not connect to MongoDB")
-        

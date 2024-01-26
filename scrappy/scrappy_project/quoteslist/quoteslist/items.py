@@ -7,5 +7,5 @@ import scrapy
 
 
 class QuoteslistItem(scrapy.Item):
-    quote:str
-    author:str
+    quote: str
+    author: str

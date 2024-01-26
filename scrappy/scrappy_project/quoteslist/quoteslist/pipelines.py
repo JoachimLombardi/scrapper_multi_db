@@ -6,11 +6,13 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
-import pymongo, json
+import pymongo
+import json
 
 
 class MongoPipeline:
     collection_name = "quotes"
+
     def __init__(self, mongo_uri, mongo_db):
         self.mongo_uri = mongo_uri
         self.mongo_db = mongo_db
@@ -30,8 +32,10 @@ class MongoPipeline:
         self.client.close()
 
     def process_item(self, item, spider):
-        if not self.db["quotes"].find_one({"quote": item["quote"], "author": item["author"]}):
-            self.db[self.collection_name].insert_one(ItemAdapter(item).asdict())
+        if not self.db["quotes"].find_one(
+         {"quote": item["quote"], "author": item["author"]}):
+            self.db[self.collection_name].insert_one(
+                ItemAdapter(item).asdict())
             # Create a JSON object with the scraped data
             scraped_data = {
                 "quote": item["quote"],
@@ -41,4 +45,3 @@ class MongoPipeline:
             with open("scraped_data.json", "a") as f:
                 f.write(json_data + "\n")
         return item
-        

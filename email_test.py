@@ -1,6 +1,5 @@
-from redmail import EmailSender
-from pathlib import Path
 from config_email import send_email_config
+
 
 def send_email_log():
     log_file_path, email = send_email_config()
